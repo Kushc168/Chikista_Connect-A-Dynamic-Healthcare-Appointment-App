@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "219953356480",
+    "project_id": "chikitsa-connect-a1c7a",
+    "storage_bucket": "chikitsa-connect-a1c7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219953356480:android:a8f617144d7a31a1791725",
+        "android_client_info": {
+          "package_name": "com.example.dynamic_appointment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW98aR8PpBGFUG_vQqyiHbDFr9UTj2Jpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
