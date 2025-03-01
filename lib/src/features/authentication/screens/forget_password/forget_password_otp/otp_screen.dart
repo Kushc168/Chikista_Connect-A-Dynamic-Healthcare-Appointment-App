@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../constants/sizes.dart';
 import '../../../../../constants/text_strings.dart';
+import '../../dashboard/home_screen.dart';
 import '../forget_password_mail/forget_password_mail.dart';
 
 class OTPScreen extends StatelessWidget {
@@ -41,7 +44,9 @@ class OTPScreen extends StatelessWidget {
             const SizedBox(height: 20.0),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(onPressed: () {}, child: const Text(tNext)),
+              child: ElevatedButton(onPressed: () {
+                Get.to(() => HomeScreen());
+              }, child: const Text(tNext)),
             ),
           ],
         ),

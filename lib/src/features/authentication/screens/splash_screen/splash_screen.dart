@@ -23,7 +23,7 @@ class SplashScreen extends StatelessWidget {
       body: Stack(
         children: [
           Obx(() => AnimatedPositioned(
-              duration: const Duration(milliseconds: 1600),
+              duration: const Duration(milliseconds:0),
               top: splashController.animate.value ? 0 : 80,
               left: splashController.animate.value ? 0 : 50,
               right: splashController.animate.value ? 0 : 30,

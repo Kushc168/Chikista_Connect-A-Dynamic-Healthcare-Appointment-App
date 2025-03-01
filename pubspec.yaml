@@ -22,7 +22,9 @@ dependencies:
   flutter_lints: ^1.0.0
   flutter_otp_text_field: ^1.1.1
   firebase_auth: ^4.17.8
-
+  line_awesome_flutter: ^2.0.0
+  cloud_firestore: ^4.17.2
+  intl: ^0.17.0
 
 
 dev_dependencies:
@@ -46,6 +48,7 @@ flutter:
     - assets/images/welcome_images/
     - assets/images/forget_password/
     - assets/images/dashboard/
+
 
 
 #name: dynamic_appointment

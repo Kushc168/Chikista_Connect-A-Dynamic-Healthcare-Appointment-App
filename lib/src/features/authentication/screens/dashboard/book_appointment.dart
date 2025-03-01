@@ -32,11 +32,11 @@ class BookAppointmentScreen extends StatelessWidget {
               height: 20), // Add some space between search bar and doctor cards
           Expanded(
             child: ListView.builder(
-              itemCount: 15, // Number of doctor cards
+              itemCount: 5, // Number of doctor cards
               itemBuilder: (context, index) {
                 return DoctorCard(
-                  doctorName: 'Dr. John Doe $index', // Example doctor name
-                  specialization: 'Cardiologist', // Example specialisation
+                  doctorName: _getDoctorName(index), // Example doctor name
+                  specialization: _getSpecialization(index), // Example specialisation
                 );
               },
             ),
@@ -44,6 +44,40 @@ class BookAppointmentScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String _getDoctorName(int index) {
+    switch (index) {
+      case 0:
+        return 'Dr. Ananya Singh';
+      case 1:
+        return 'Dr. Rajesh Patel';
+      case 2:
+        return 'Dr. Nidhi Sharma';
+      case 3:
+        return 'Dr. Vikram Singh';
+      case 4:
+        return 'Dr. Priya Gupta';
+      default:
+        return 'Dr. Unknown';
+    }
+  }
+
+  String _getSpecialization(int index) {
+    switch (index) {
+      case 0:
+        return 'Cardiologist';
+      case 1:
+        return 'Orthopedic Surgeon';
+      case 2:
+        return 'Pediatrician';
+      case 3:
+        return 'Dermatologist';
+      case 4:
+        return 'Gynecologist';
+      default:
+        return 'Specialization Unknown';
+    }
   }
 }
 
@@ -60,7 +94,7 @@ class DoctorCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          const EdgeInsets.symmetric(vertical: 8.0), // Add vertical padding
+      const EdgeInsets.symmetric(vertical: 8.0), // Add vertical padding
       child: GestureDetector(
         // Wrap DoctorCard with GestureDetector
         onTap: () {
@@ -119,7 +153,7 @@ class DoctorCard extends StatelessWidget {
                 },
                 style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.green),
+                  MaterialStateProperty.all<Color>(Colors.green),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),

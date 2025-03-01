@@ -1,6 +1,7 @@
+import 'package:dynamic_appointment/src/features/authentication/screens/dashboard/tracking.dart';
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
-import 'appointments_screen.dart';
+
 import 'messages_screen.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -20,9 +21,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+
       body: _screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar( 
+      bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromARGB(255, 160, 201, 235),
         currentIndex: _currentIndex,
         onTap: (index) {

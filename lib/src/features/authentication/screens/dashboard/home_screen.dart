@@ -1,17 +1,21 @@
+import 'package:dynamic_appointment/src/features/authentication/screens/dashboard/tracking_home.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../../utils/theme/widget_themes/card_with_button.dart';
 import '../../../../utils/theme/widget_themes/option_widget.dart';
 import '../welcome/welcome_screen.dart';
 import 'book_appointment.dart';
 import 'search_department.dart';
-
+// import 'home_appointments.dart';
+import 'profile_screen.dart';
+// import 'welcome_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chikitsa  Connect'),
+        title: Text('Chikitsa Connect'),
         backgroundColor: Color.fromARGB(255, 137, 188, 231),
         actions: [
           IconButton(
@@ -28,22 +32,14 @@ class HomeScreen extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(Icons.account_circle),
                     title: Text('My Profile'),
-                    onTap: () {
-                      // Handle My Profile option
-                    },
+                    onTap: () => Get.to(() => ProfileScreen()),
                   ),
                 ),
                 PopupMenuItem(
                   child: ListTile(
                     leading: Icon(Icons.logout),
                     title: Text('Log Out'),
-                    onTap: () {
-                      // Navigate to the WelcomeScreen when Log Out is tapped
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => WelcomeScreen()),
-                      );
-                    },
+                    onTap: () => Get.to(() => WelcomeScreen()),
                   ),
                 ),
               ];
@@ -113,7 +109,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
               child: TextField(
                 style: TextStyle(color: Colors.black),
                 decoration: InputDecoration(
@@ -133,30 +129,36 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8),
-            CardWithButton(
-              color: Colors.blue,
-              image: AssetImage('assets/images/dashboard/output.png'),
-              buttonText: 'Book Appointment',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BookAppointmentScreen()),
-                );
-                // Code to handle booking appointment
-              },
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: CardWithButton(
+                color: Colors.blue,
+                image: AssetImage('assets/images/dashboard/output.png'),
+                buttonText: 'Book Appointment',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BookAppointmentScreen()),
+                  );
+                  // Code to handle booking appointment
+                },
+              ),
             ),
             SizedBox(height: 8),
-            CardWithButton(
-              color: Colors.blue,
-              image: AssetImage('assets/images/dashboard/output.png'),
-              buttonText: 'Search by Department ',
-              onPressed: () {
-                // Code to handle searching by symptoms
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SearchDepartmentScreen()),
-                );
-              },
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: CardWithButton(
+                color: Colors.blue,
+                image: AssetImage('assets/images/dashboard/output.png'),
+                buttonText: 'Search by Department',
+                onPressed: () {
+                  // Code to handle searching by department
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchDepartmentScreen()),
+                  );
+                },
+              ),
             ),
             SizedBox(height: 8),
             Card(
@@ -181,53 +183,17 @@ class HomeScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 20.0),
-                        child: Image.asset(
-                          'assets/images/dashboard/output.png',
-                          height: 100,
-                          width: 100,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Dr. John Doe',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            'Specialty: Cardiologist',
-                            style: TextStyle(
-                              fontSize: 16,
-                            ),
-                          ),
-                          SizedBox(height: 8),
-                          ElevatedButton(
-                            onPressed: () {
-                              // Handle button press
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.green,
-                            ),
-                            child: Text(
-                              'Show Details',
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                        ],
-                      ),
+                    // Added new button to navigate to HomeAppointmentsScreen
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomeAppointmentsScreen()),
+                        );
+                      },
+                      child: Text('Appointment Track'),
                     ),
                   ],
                 ),

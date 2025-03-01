@@ -45,6 +45,8 @@ class AuthenticationRepository extends GetxController {
     return null;
   }
 
+  void phoneAuthentication(String phoneNo) {}
+
 
   // Future<String?> loginWithEmailAndPassword(String email, String password) async {
   //   try {
